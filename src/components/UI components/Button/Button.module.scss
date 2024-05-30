@@ -1,0 +1,44 @@
+@import './../../variables';
+
+.Button { 
+  margin: 0 .5rem;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  background-color: white;
+
+  &:hover {
+    color: white;
+    border-color: white;
+    cursor: pointer;
+  }
+} 
+
+.Success {
+  border: thin solid green;
+  color: green;
+
+  &:hover {
+    color: white;
+    background-color: green;
+  }
+}
+
+.Danger {
+  border: thin solid red;
+  color: red;
+
+  &:hover {
+    color: white;
+    background-color: red;
+  }
+}
+
+.Blue {
+  border: thin solid $blue-500;
+  color: $blue-500;
+
+  &:hover {
+    color: white;
+    background-color: $blue-500;
+  }
+}
