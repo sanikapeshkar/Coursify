@@ -1,4 +1,4 @@
-@import './../../variables';
+@import '../../../theme/variables';
 
 .Button { 
   margin: 0 .5rem;
@@ -34,11 +34,11 @@
 }
 
 .Blue {
-  border: thin solid $blue-500;
-  color: $blue-500;
+  border: thin solid $coditas-blue;
+  color: $coditas-blue;
 
   &:hover {
     color: white;
-    background-color: $blue-500;
+    background-color: $coditas-blue;
   }
 }
