@@ -1,0 +1,61 @@
+@import '../../theme/variables';
+
+.Login { 
+    display: flex;
+    height: 100vh;
+
+    .Left {
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $coditas-darkblue;
+    }
+
+    .Right {
+        width: 50vw;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .ImgContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .TitleMain {
+                color: $coditas-blue;
+                text-align: center;
+                font-size: 4rem;
+                font-weight: 400;
+                margin: .5rem;
+            }
+        }
+
+        .TitleSecondary {
+            color: black;
+            text-align: center;
+            font-size: 1.5rem;
+            margin: .5rem;
+        }
+
+        .Para {
+            color: $coditas-darkgray;
+            text-align: center;
+            font-size: .8rem;
+            margin: .5rem;
+        }
+
+        .GoogleSignInBtn {
+            cursor: pointer;
+            border: thin solid transparent;
+
+            &:hover {
+                border: thin solid gray;
+                border-radius: .25rem;
+            }
+        }
+    }
+} 
