@@ -1,0 +1,19 @@
+@import '../../variables';
+
+.Dropdown { 
+    position: absolute;
+    top: 2rem;
+    background-color: white;
+    padding: .5rem;
+    text-align: center;
+    list-style: none;
+    z-index: 2;
+
+    .ListItem {
+        padding: 0.5rem 0.5rem;
+
+        &:hover {
+            background-color: $coditas-gray;
+        }
+    }
+} 
