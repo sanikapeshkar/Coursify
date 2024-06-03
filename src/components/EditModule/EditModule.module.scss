@@ -1,0 +1,82 @@
+@import '../../theme/variables';
+
+.EditModule {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: gray, $alpha: .2);
+
+    .Form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+        background-color: $coditas-lightgray;
+        border: thin solid $addModuleForm-borderColor;
+        border-radius: .25rem;
+        position: relative;
+        padding-top: 2rem;
+
+        .CloseIcon {
+            position: absolute;
+            right: .2rem;
+            top: .2rem;
+            scale: 0.75;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .Header {
+            margin: auto;
+        }
+
+        .FormDiv {
+            display: flex;
+        }
+
+        .FormInputWithError {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .FormInputWithError:last-child {
+            position: relative;
+        }
+
+        .FormField,
+        .CSV {
+            margin: 1rem 2rem;
+            padding: .5rem;
+            border-radius: .25rem;
+            border: thin solid $coditas-lightgray;
+        }
+
+        .CSV {
+            position: absolute;
+            left: 0;
+            width: 13rem;
+        }
+
+        .CSVAlert {
+            position: absolute;
+            left: 4rem;
+            top: 4rem;
+            width: max-content;
+        }
+
+        .ValidationAlert {
+            color: red;
+            font-size: small;
+        }
+
+        .Btn {
+            margin: auto;
+            margin-bottom: 1rem;
+        }
+    }
+}
