@@ -11,6 +11,7 @@ import Login from "./pages/Login/Login";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import EditModule from "./components/EditModule/EditModule";
 import AddModule from "./components/AddModule/AddModule";
+import AdminCourses from "./pages/AdminCourses/AdminCourses";
 
 const ProtectedRoutes = () => {
 	const localStorageToken = localStorage.getItem("token");
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: "/adminCourses",
+    element: <AdminCourses/>,
     errorElement: <ErrorPage/>
   },
   {

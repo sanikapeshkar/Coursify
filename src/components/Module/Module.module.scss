@@ -1,0 +1,47 @@
+ .Module{
+    padding: 1.5rem;
+    border: .0625rem solid #eaecf0;
+    border-top: .125rem solid  #2196f3;
+    box-shadow: 0 .0625rem .1875rem #1018281a, 0 .0625rem .125rem #1018280f;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+
+    .ModuleName{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .Accordian{
+        cursor: pointer;
+    }
+    .ModuleInfo{
+        display: flex;
+        gap: 5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+    .ModuleInfoVisible{
+        max-height: 200px;
+    }
+    .ModuleItems{
+        display: flex;
+        gap: 5rem;
+    }
+    .ModuleItem, .ModuleItemValue{
+        color: #98a2b3;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+    .ModuleItemValue{
+        color: #344054;
+    }
+    .EditButton{
+       margin-top: 1rem;
+       display: flex;
+       justify-content: flex-end;
+    }
+ }
