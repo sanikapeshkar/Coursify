@@ -9,6 +9,8 @@ import { Navigate, Outlet } from "react-router-dom";
 
 import Login from "./pages/Login/Login";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import EditModule from "./components/EditModule/EditModule";
+import AddModule from "./components/AddModule/AddModule";
 
 const ProtectedRoutes = () => {
 	const localStorageToken = localStorage.getItem("token");

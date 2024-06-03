@@ -2,11 +2,19 @@ import { LoginProps } from "./Login.types";
 import styles from './Login.module.scss';
 
 import googleButton from '../../assets/googleSignInBtn.png';
+import { loginUser } from "../../services/Login.service";
 
 const Login = ({}: LoginProps) => {
 
-  const handleClick = () => {
-    postLoginUser();
+  const handleClick = async () => {
+    try {
+      const response = await loginUser();
+      console.log(response);
+      
+    } catch (error) {
+      console.log(error);
+    }
+    // window.open('https://6ab8-152-58-33-41.ngrok-free.app/api/auth/google', '_self');
   }
 
   return (
@@ -23,9 +31,9 @@ const Login = ({}: LoginProps) => {
             src=""
             className={styles.Logo}
           />
-          <h1 className={styles.TitleMain}>Hippa</h1>
+          <h1 className={styles.TitleMain}>Hipaa</h1>
         </div>
-        <h2 className={styles.TitleSecondary}>Welcome to HIPPA training platform</h2>
+        <h2 className={styles.TitleSecondary}>Welcome to HIPAA training platform</h2>
         <p className={styles.Para}>Sign in using your Coditas G-suite account</p>
         <img
           src={googleButton}
