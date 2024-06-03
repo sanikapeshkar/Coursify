@@ -1,0 +1,17 @@
+.ModuleList{
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   
+   .SaveSequenceButton{
+      display: flex;
+      justify-content: space-between;
+   }
+   .List{
+       display: flex;
+       flex-direction: column;
+       gap: 2rem;
+    }
+
+}
+
