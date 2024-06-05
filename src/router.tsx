@@ -1,17 +1,24 @@
+import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
 } from "react-router-dom";
 import { Navigate, Outlet } from "react-router-dom";
 
 import Login from "./pages/Login/Login";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import EditModule from "./components/EditModule/EditModule";
+import AddModule from "./components/AddModule/AddModule";
 import AdminCourses from "./pages/AdminCourses/AdminCourses";
 import AdminUsers from "./pages/AdminUsers/AdminUsers";
 import EnrolledUsers from "./components/EnrolledUsers/EnrolledUsers";
 import UnEnrolledUsers from "./components/UnEnrolledUsers/UnEnrolledUsers";
 import CertifiedUsers from "./components/CertifiedUsers/CertifiedUsers";
+import Header from "./components/Header/HeaderFooterContainer";
 import Button from "./components/UI components/Button/Button";
-import HeaderFooterContainer from "./components/HeaderFooterContainer/HeaderFooterContainer";
+import User from "./pages/User/User";
 import { ReactNode } from "react";
 
 const Logout = () => <Button type="submit" text="Log Out" bgColor="blue" handleClick={() => console.log('Log Out')} />
@@ -28,6 +35,21 @@ const USER_TYPES = {
 
 const CURRENT_USER_TYPE = USER_TYPES.ADMIN;
 
+const AdminElement = (children: ReactNode) => {
+  if (CURRENT_USER_TYPE === 'admin') {
+    return <div>{children}</div>
+  } else {
+    return <ErrorPage/>
+  }
+}
+
+const UserElement = (children: ReactNode) => {
+  if (CURRENT_USER_TYPE === 'user') {
+    return <div>{children}</div>
+  } else {
+    return <ErrorPage/>
+  }
+}
 export const router = createBrowserRouter([
   {
     path: "/login",
@@ -36,11 +58,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "/admin/*",
-    element: <HeaderFooterContainer logoutBtn={Logout} />,
+    element: <Header logoutBtn={Logout} />,
     children: [
       {
         path: 'courses',
-        element: <AdminCourses/>,
+        element: <AdminCourses type="admin"/>,
         errorElement: <ErrorPage />
       },
       {
@@ -65,20 +87,21 @@ export const router = createBrowserRouter([
     ],
     errorElement: <ErrorPage />
   },
+  {
+    path: "/user/*",
+    element: <Header logoutBtn={Logout}/>,
+    children: [
+      {
+        path: 'id/*',
+        element: <AdminCourses type="user"/>,
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "profile",
+            element: <AdminCourses type="user"/>
+          }
+        ]
+      }
+    ]
+  }
 ]);
-
-const AdminElement = (children: ReactNode) => {
-  if (CURRENT_USER_TYPE === 'admin') {
-    return <div>{children}</div>
-  } else {
-    return <ErrorPage/>
-  }
-}
-
-const UserElement = (children: ReactNode) => {
-  if (CURRENT_USER_TYPE === 'user') {
-    return <div>{children}</div>
-  } else {
-    return <ErrorPage/>
-  }
-}

@@ -1,11 +1,10 @@
+import Users from "../Users/Users.tsx";
 import styles from "./EnrolledUsers.module.scss";
 import { EnrolledUsersProps } from "./EnrolledUsers.types.ts";
-
-import { users } from "../../components/User/data.ts";
+import { users } from "../../components/Users/data.ts";
 import { IoSearch } from "react-icons/io5";
 
-const EnrolledUsers = ({ }: EnrolledUsersProps) => {
-
+const EnrolledUsers = ({}: EnrolledUsersProps) => {
   const enrolledusers = users.filter((user) => user.status === "enrolled");
   console.log(enrolledusers);
 
@@ -35,17 +34,17 @@ const EnrolledUsers = ({ }: EnrolledUsersProps) => {
           </tr>
         </thead>
         <tbody>
-          {enrolledusers.map((user, index) => (
-            <tr key={index} className={styles.Columns}>
+          {enrolledusers.map((user, i) => (
+            <tr key={i} className={styles.Columns}>
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>{user.designation}</td>
               <td>{user.department}</td>
               <td>{user.progress}%</td>
-              <td className={styles.Uploads}>
-                <input type="file"
-                  accept=".csv"
-                />
+              <td>
+              <input type="file" 
+              accept=".csv"
+              />
               </td>
             </tr>
           ))}

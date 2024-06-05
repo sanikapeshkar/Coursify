@@ -1,4 +1,4 @@
-import { UserProps } from "../User/User.types";
+import { UsersProps } from "../Users/Users.types";
 
  export interface CertifiedUsersProps {
  } 
