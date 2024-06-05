@@ -1,0 +1,55 @@
+@import "../../theme/variables";
+
+.AdminUsers {
+  display: flex;
+  background: #f4f8ff;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+
+  .UserTypes {
+    width: 20vw;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: $coditas-darkblue;
+    font-weight: 500;
+    box-shadow: 0 0.0625rem 0.1875rem #1018281a, 0 0.0625rem 0.125rem #1018280f;
+    border-radius: 0.25rem;
+    background: #ffffff;
+    border: .0625rem solid #eaecf0;
+  }
+
+  .UsersHeading {
+    color: black;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .Users {
+    display: flex;
+    padding: 1rem;
+    box-shadow: 0 0.0625rem 0.1875rem #1018281a, 0 0.0625rem 0.125rem #1018280f;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    border: .0625rem solid #eaecf0;
+  }
+
+  .UserTypeBtn {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: .375rem;
+    cursor: pointer;
+
+    .Para {
+      font-size: medium;
+    }
+  }
+
+  .UserTypeBtn:hover {
+    background: #e9f4fe;
+  }
+}

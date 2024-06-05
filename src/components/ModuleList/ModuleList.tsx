@@ -1,18 +1,19 @@
-import { SetStateAction, useState } from "react";
+import { ModuleListProps } from "./ModuleList.types.ts";
+import styles from "./ModuleList.module.scss";
+
+import { useState } from "react";
 import Module from "../Module/Module.tsx";
 import Button from "../UI components/Button/Button.tsx";
-import styles from "./ModuleList.module.scss";
-import { ModuleListProps } from "./ModuleList.types.ts";
 import AddModule from "../AddModule/AddModule.tsx";
 
 const ModuleList = ({ modules }: ModuleListProps) => {
-const [showModule, setShowModule] = useState(false);
 
+  const [showModule, setShowModule] = useState(false);
 
   return (
     <div className={styles.ModuleList}>
       <div className={styles.SaveSequenceButton}>
-      <Button
+        <Button
           text={"Add Module"}
           type={"submit"}
           bgColor={""}
@@ -29,12 +30,12 @@ const [showModule, setShowModule] = useState(false);
       </div>
       <div className={styles.List}>
         {
-          showModule && <AddModule setShowModal={setShowModule}/>
+          showModule && <AddModule setShowModal={setShowModule} />
         }
-        {modules.map((data, i) => {
+        {modules.map((data, index) => {
           return (
             <Module
-              key={i}
+              key={index}
               moduleTitle={data.moduleTitle}
               videoTitle={data.videoTitle}
               videoLink={data.videoLink}

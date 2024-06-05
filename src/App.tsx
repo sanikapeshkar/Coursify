@@ -1,49 +1,9 @@
-import { createRoot } from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
-import { Navigate, Outlet } from "react-router-dom";
-
-import Login from "./pages/Login/Login";
-import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import EditModule from "./components/EditModule/EditModule";
-import AddModule from "./components/AddModule/AddModule";
-import AdminCourses from "./pages/AdminCourses/AdminCourses";
-
-const ProtectedRoutes = () => {
-	const localStorageToken = localStorage.getItem("token");
-	return localStorageToken ? <Outlet /> : <Navigate to="/"  replace />;
-};
-
-const router = createBrowserRouter([
-  {
-    path: "/login",
-    element: <Login/>,
-    errorElement: <ErrorPage/>
-  },
-  {
-    path: "/adminCourses",
-    element: <AdminCourses/>,
-    errorElement: <ErrorPage/>
-  },
-  {
-    element: <ProtectedRoutes/>,
-    children: [
-      {
-        path: "/",
-        element: <div>Admin</div>,
-      },
-    ]
-  }
-]);
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
 
 function App() {
-  return (
-    <RouterProvider router={router}/>
-  );
+  return <RouterProvider router={router} />;
+  // return 
 }
 
 export default App;

@@ -1,7 +1,9 @@
 @import '../../theme/variables';
 
 .EditModule {
-    height: 100vh;
+   position: absolute;
+    left: 30vw;
+    top: 12vh;
     display: flex;
     justify-content: center;
     align-items: center;

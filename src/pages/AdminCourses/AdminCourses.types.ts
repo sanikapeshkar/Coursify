@@ -1,1 +1,1 @@
- export interface AdminCoursesProps {} 
+export interface AdminCoursesProps {} 

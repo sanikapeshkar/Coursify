@@ -1,7 +1,17 @@
- .AdminCourses{
-    padding: 5rem;
-    background: #f4f8ff;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
- }
+@import '../../theme/variables';
+
+.AdminCourses {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   position: relative;
+   background-color: white;
+   padding: 1rem;
+   border: thin solid transparent;
+   border-radius: .25rem;
+   box-shadow: 0 .0625rem .1875rem $border-color, 0 .0625rem .125rem $border-color;
+
+   .Header {
+      font-weight: 400;
+   }
+}
