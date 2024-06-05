@@ -175,7 +175,7 @@ const EditModule = ({ moduleId, setShowModal }: EditModuleProps) => {
           <Button
             text="Submit"
             type="submit"
-            bgColor="success"
+            bgColor="blue"
             handleClick={() => console.log('Submit form')}
           />
         </div>

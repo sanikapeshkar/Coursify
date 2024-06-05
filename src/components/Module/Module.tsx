@@ -4,7 +4,7 @@ import { ModuleProps } from "./Module.types.ts";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { useState } from "react";
 import Button from "../UI components/Button/Button.tsx";
-
+import { Roles } from "../../constants.ts"
 const Module = ({
   id,
   moduleTitle,
@@ -12,6 +12,7 @@ const Module = ({
   videoLink,
   minPassingMarks,
   noOfQuestions,
+  type
 }: ModuleProps) => {
 
   const [selected, setSelected] = useState<number | null>(null);
@@ -21,8 +22,24 @@ const Module = ({
     }
     setSelected(id);
   };
-
+  const editModuleBtn = <Button
+  text={"Edit Module"}
+  type={"submit"}
+  bgColor={""}
+  handleClick={function (): void {
+    throw new Error("Function not implemented.");
+  }}
+/>
+const startVideoBtn = <Button
+text={"Start Module"}
+type={"submit"}
+bgColor={""}
+handleClick={function (): void {
+  throw new Error("Function not implemented.");
+}}
+/>
   return (
+    
     <div className={styles.Module}>
       <div onClick={() => toggle(id)} className={styles.ModuleName}>
         <h1 className={styles.Header}>{moduleTitle}</h1>
@@ -55,14 +72,11 @@ const Module = ({
         </div>
         {selected === id && ( 
           <div className={styles.EditButton}>
-            <Button
-              text={"Edit Module"}
-              type={"submit"}
-              bgColor={""}
-              handleClick={function (): void {
-                throw new Error("Function not implemented.");
-              }}
-            />
+            {type === Roles.ADMIN && 
+           editModuleBtn }
+            {
+              type === Roles.USER && startVideoBtn
+            }
           </div>
         )}
       </div>

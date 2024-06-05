@@ -1,0 +1,86 @@
+@import '../../theme/variables';
+
+.HeaderFooterContainer {
+    max-height: 100vh;
+
+    .Header {
+        padding: 1rem 2rem;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .HeaderMain {
+            color: $coditas-blue;
+            font-size: 2rem;
+        }
+    }
+
+    .Nav {
+        color: $coditas-darkgray;
+        display: flex;
+        padding: 0 1rem;
+
+        .NavHeader {
+            padding: 0 1.5rem;
+            font-size: medium;
+            font-weight: 400;
+
+            &:hover {
+                color: $coditas-darkblue;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .Flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .Text {
+        display: flex;
+        color: $coditas-darkgray;
+    }
+
+    .Outlet {
+        height: calc(100vh - 7rem);
+        background-color: $coditas-lightgray;
+        padding: 1rem;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    .Footer {
+        padding: 0.5rem;
+
+        .Underline {
+            text-decoration: underline;
+            margin: 0 .5rem;
+            
+            a {
+                color: $coditas-darkgray;
+            }
+        }
+        
+        .Socials {
+            display: flex;
+
+            .IconContainer {
+                display: flex;
+            }
+            .Icons {
+                background-color: $coditas-darkgray;
+                margin: 0 .5rem;
+                color: $coditas-lightgray;
+                border: .25rem solid $coditas-darkgray;
+                border-radius: 50vw;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

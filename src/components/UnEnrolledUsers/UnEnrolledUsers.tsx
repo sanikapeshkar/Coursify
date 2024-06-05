@@ -1,9 +1,9 @@
+import Button from "../UI components/Button/Button.tsx";
+import Users from "../Users/Users.tsx";
+import { users } from "../Users/data.ts";
 import styles from "./UnEnrolledUsers.module.scss";
 import { UnEnrolledUsersProps } from "./UnEnrolledUsers.types.ts";
-
-import { users } from "../User/data.ts";
 import { IoSearch } from 'react-icons/io5';
-import Button from "../UI components/Button/Button.tsx";
 
 const UnEnrolledUsers = ({}: UnEnrolledUsersProps) => {
   const unEnrolledUsers = users.filter((user) => user.status === "unenrolled");
