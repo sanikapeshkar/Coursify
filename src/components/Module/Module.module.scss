@@ -1,11 +1,22 @@
- .Module{
-    padding: 1.5rem;
+@import '../../theme/variables';
+
+.Module{
+    padding: 2rem;
     border: .0625rem solid #eaecf0;
     border-top: .125rem solid  #2196f3;
     box-shadow: 0 .0625rem .1875rem #1018281a, 0 .0625rem .125rem #1018280f;
     border-radius: 0.5rem;
     background: #ffffff;
     font-family: 'Courier New', Courier, monospace;
+
+    .Header {
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .Para {
+        font-size: small;
+    }
 
     .ModuleName{
         display: flex;
@@ -17,7 +28,7 @@
     }
     .ModuleInfo{
         display: flex;
-        gap: 5rem;
+        gap: 2rem;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.5s ease-out;
@@ -37,7 +48,7 @@
         gap: .5rem;
     }
     .ModuleItemValue{
-        color: #344054;
+        color: $coditas-darkgray;
     }
     .EditButton{
        margin-top: 1rem;

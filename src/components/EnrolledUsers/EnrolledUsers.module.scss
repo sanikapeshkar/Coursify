@@ -1,0 +1,42 @@
+.EnrolledUsers {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 80vw;
+
+  .UsersHeader{
+    display: flex;
+    gap: 2rem;
+  }
+
+  .SearchBar{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .SearchUser {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: thin solid black
+  }
+  
+  .UserTable {
+    border-collapse: collapse;
+
+    .Uploads{
+      text-align: center;
+    }
+  }
+
+  th, td {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+
+  th {
+    padding: 1rem;
+  }
+}

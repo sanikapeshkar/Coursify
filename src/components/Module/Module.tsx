@@ -1,7 +1,8 @@
-import { SetStateAction, useState } from "react";
 import styles from "./Module.module.scss";
 import { ModuleProps } from "./Module.types.ts";
+
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { useState } from "react";
 import Button from "../UI components/Button/Button.tsx";
 
 const Module = ({
@@ -12,6 +13,7 @@ const Module = ({
   minPassingMarks,
   noOfQuestions,
 }: ModuleProps) => {
+
   const [selected, setSelected] = useState<number | null>(null);
   const toggle = (id: number) => {
     if (selected === id) {
@@ -23,7 +25,7 @@ const Module = ({
   return (
     <div className={styles.Module}>
       <div onClick={() => toggle(id)} className={styles.ModuleName}>
-        <h1>{moduleTitle}</h1>
+        <h1 className={styles.Header}>{moduleTitle}</h1>
         <span className={styles.Accordian}>
           {selected === id ? (
             <FaAngleDown style={{ color: "#2196f3" }} />
@@ -39,16 +41,16 @@ const Module = ({
       >
         <div className={styles.ModuleItems}>
           <div className={styles.ModuleItem}>
-            <p>Video Title</p>
-            <p>Video Link</p>
-            <p>Minimum Passing Marks</p>
-            <p>No Of Questions</p>
+            <p className={styles.Para}>Video Title</p>
+            <p className={styles.Para}>Video Link</p>
+            <p className={styles.Para}>Minimum Passing Marks</p>
+            <p className={styles.Para}>No Of Questions</p>
           </div>
           <div className={styles.ModuleItemValue}>
-            <p>: {videoTitle}</p>
-            <p>: {videoLink}</p>
-            <p>: {minPassingMarks}</p>
-            <p>: {noOfQuestions}</p>
+            <p className={styles.Para}>: {videoTitle}</p>
+            <p className={styles.Para}>: {videoLink}</p>
+            <p className={styles.Para}>: {minPassingMarks}</p>
+            <p className={styles.Para}>: {noOfQuestions}</p>
           </div>
         </div>
         {selected === id && ( 
